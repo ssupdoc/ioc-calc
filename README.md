@@ -9,8 +9,8 @@ In simple terms, index of coincidence is a tool for measuring how statistically 
 
 ### Python
 
-The calculation can be done in the commandline via accessing `code.py`
+The calculation can be done in the commandline via accessing `code.py`. You can calculate IoCs of messages upto a sentence in here(without new lines).
 
 ### GUI
 
-A web based solution is also available by opening the `index.html` in your browser.
+A web based solution is also available by opening the `index.html` in your browser. This can be used to calculate IoCs of multiple sentences and texts such as poems and stuff...
