@@ -2,17 +2,23 @@ const USER_INPUT = 'user-input'
 const RESULT = 'result'
 const RESULT_LINE = 'result-line'
 
+function sanitizeData(data) {
+	if(data) {
+		data = data.replace(/[^A-Za-z0-9']/g, "") // Remove all excepted characters
+	}
+	return data
+}
+
 function calcIOC() {
 	let userInput = document.getElementById(USER_INPUT).value
-	const userInputLength = userInput && userInput.trim().length
+	userInput = sanitizeData(userInput)
+	const userInputLength = userInput && userInput.length
 	let record = {}
 	for(const letter of userInput) {
-		if (letter !== '' || letter != '\n') {
-			if (!record[letter]) {
-				record[letter] = 1;
-			} else {
-				record[letter]++;
-			}
+		if (!record[letter]) {
+			record[letter] = 1;
+		} else {
+			record[letter]++;
 		}
 	}
 	const recordLength = Object.keys(record).length

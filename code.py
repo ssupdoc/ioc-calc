@@ -11,7 +11,7 @@ while canExit == False:
 		sentenceLength = len(userInput)
 		record = {}
 		for letter in userInput:
-			if letter != "":
+			if letter.isalnum():
 				curValue = record.get(letter)
 				if curValue:
 					record[letter] = curValue + 1
